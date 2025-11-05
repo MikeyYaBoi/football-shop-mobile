@@ -6,29 +6,48 @@ class MyHomePage extends StatelessWidget {
 	final List<ProductButton> productFilters = [
 		ProductButton("All Products"),
 		ProductButton("My Products"),
-		ProductButton("Create Products"),
+		ProductButton("Create Product"),
 	];
 	
 	@override
 	Widget build(BuildContext context) {
 		return Scaffold(
-
+			appBar: AppBar(
+				title: const Text("Football Shop",
+									style: TextStyle(
+										color: Colors.white,
+										fontWeight: FontWeight.bold,
+									),
+				),
+			backgroundColor: Theme.of(context).colorScheme.secondary,
+			),
+			body: Center(
+			  child: Column(
+				mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+				children: productFilters.toList(),
+			  ),
+			),
 		);
+	}
 }
 
 class ProductButton extends StatelessWidget {
 	final String productFilter;
 
-	ProductSnackBar(this.productFilter, {super.key});
+	const ProductButton(this.productFilter, {super.key});
 
 	@override
 	Widget build(BuildContext context) {
 		return ElevatedButton(
-			child: const Text("${this.productFilter}"),
+			child: Text("${this.productFilter}",
+					style: TextStyle(color: Colors.white)
+					),
 			onPressed: () {
-				ScaffoldMessenger.of(context).showSnackBar(
+				ScaffoldMessenger.of(context)
+				..hideCurrentSnackBar()
+				..showSnackBar(
 					SnackBar(
-						content: const
+						content: 
 						Text("Kamu telah menekan tombol ${this.productFilter}"),
 					),
 				);
