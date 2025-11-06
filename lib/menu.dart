@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
 			backgroundColor: Theme.of(context).colorScheme.secondary,
 			),
 			body: Center(
-			  child: Column(
+			  child: Row(
 				mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 				children: productFilters.toList(),
 			  ),
