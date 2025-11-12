@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_shop_mobile/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
 	MyHomePage({super.key});
@@ -19,8 +20,11 @@ class MyHomePage extends StatelessWidget {
 										fontWeight: FontWeight.bold,
 									),
 				),
-			backgroundColor: Theme.of(context).colorScheme.secondary,
+				backgroundColor: Theme.of(context).colorScheme.secondary,
 			),
+
+			drawer: LeftDrawer(),
+
 			body: Center(
 			  child: Row(
 				mainAxisAlignment: MainAxisAlignment.spaceEvenly,
