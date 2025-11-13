@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_shop_mobile/widgets/left_drawer.dart';
+import 'package:football_shop_mobile/screens/product_form.dart';
+import 'package:football_shop_mobile/widgets/product_card.dart';
 
 class MyHomePage extends StatelessWidget {
 	MyHomePage({super.key});
@@ -30,36 +32,6 @@ class MyHomePage extends StatelessWidget {
 				mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 				children: productFilters.toList(),
 			  ),
-			),
-		);
-	}
-}
-
-class ProductButton extends StatelessWidget {
-	final String productFilter;
-
-	const ProductButton(this.productFilter, {super.key});
-
-	@override
-	Widget build(BuildContext context) {
-		return ElevatedButton(
-			child: Text("${this.productFilter}",
-					style: TextStyle(color: Colors.white)
-					),
-			onPressed: () {
-				ScaffoldMessenger.of(context)
-				..hideCurrentSnackBar()
-				..showSnackBar(
-					SnackBar(
-						content: 
-						Text("Kamu telah menekan tombol ${this.productFilter}"),
-					),
-				);
-			},
-			style: ElevatedButton.styleFrom(backgroundColor:
-				this.productFilter == "All Products" ? Colors.blue
-				: this.productFilter == "My Products" ? Colors.green
-				: Colors.red,
 			),
 		);
 	}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_shop_mobile/screens/menu.dart';
+import 'package:football_shop_mobile/screens/product_form.dart';
 
 class LeftDrawer extends StatelessWidget {
 	const LeftDrawer({super.key});
@@ -53,10 +54,12 @@ class LeftDrawer extends StatelessWidget {
 						title: const Text('Tambah Produk'),
 						// Bagian redirection ke NewsFormPage
 						onTap: () {
-							/*
-							TODO: Buatlah routing ke NewsFormPage di sini,
-							setelah halaman NewsFormPage sudah dibuat.
-							*/
+							Navigator.push(
+								context,
+								MaterialPageRoute(
+									builder: (context) => ProductFormPage(),
+								)
+							);
 						},
 					),
 				],

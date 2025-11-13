@@ -32,3 +32,16 @@ BuildContext adalah objek yang merepresentasikan lokasi (posisi) suatu widget di
 
 Hot reload adalah fitur Flutter yang memungkinkan developer melihat efek perubahan kode secara instan di aplikasi yang sedang berjalan, tanpa kehilangan state (keadaan) aplikasi. Flutter hanya memperbarui bagian kode yang berubah dan membangun ulang widget tree yang terpengaruh tanpa kehilangan state. Bedanya dengan Hot restart adalah Hot restart memperbarui bagian aplikasi yang berubah tapi kemudian menjalankan ulang aplikasi Flutter, sehingga mereset state dan data-data ke kondisi awal app berjalan.
 </details>
+
+<summary>TUGAS 8</summary>
+<details>
+Perbedaan Navigator.push() dan Navigator.pushReplacement() adalah push() menambah halaman di atas halaman sebelumnya yang sedang tampil. Jika user menekan tombol Back, Flutter akan kembali ke halaman sebelumnya. Sedangkan pushReplacement() mengganti halaman yang ada saat ini di stack dengan halaman baru, sehingga user tidak bisa kembali ke halaman sebelumnya jika menekan tombol Back. Fungsi push() cocok digunakan untuk navigasi ke halaman daftar produk dan produk detail, sedangkan pushReplacement() cocok untuk navigasi ke halaman utama dan setelah form.
+
+Saya menggunakan AppBar untuk mendesain header pada halaman aplikasi, Drawer untuk membuat fitur *header* di bagian kiri halaman, dan Scaffold untuk membentuk tampilan body masing-masing halaman aplikasi.
+
+Padding berguna memberi jarak di sekitar widget sehingga membuat tampilan form tersusun rapi tidak menempel ke pinggir layar atau elemen lain dan semacamnya. Padding saya gunakan di halaman form produk pada setiap widget input.
+SingleChildScrollView berguna membungkus konten sehingga bisa di-*scroll* ketika isi konten tidak muat di halaman. Widget ini mencegah overflow error akibat konten yang terlalu besar dan memudahkan form yang panjang tetap bisa diakses leluasa di layar kecil. Widget ini saya gunakan untuk isian kategori produk di form yang bisa dipilih user. 
+ListView menampilkan daftar elemen dalam bentuk *scrollable list*. ListView otomatis *scrollable*, efisien karena hanya merender widget yang terlihat di layar, dan cocok digunakan untuk elemen yang jumlahnya dinamis atau panjang. ListView saya gunakan pada widget drawer di left_drawer.dart.
+
+Saya menggunakan colorscheme warna hijau muda sebagai warna primer (`lightGreen`) dan hijau muda cerah sebagai warna sekunder (`lightGreenAccent[400]`) yang bekerja di seluruh aplikasi sebagai warna dasar untuk menyesuaikan dengan warna tema di aplikasi web saya. Colorscheme ini menjadi acuan warna pada widget-widget di aplikasi yang mungkin memakai variasi warna berbeda sehingga masih menyatu dengan tema keseluruhan.
+</details>
