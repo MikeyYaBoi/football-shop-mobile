@@ -10,6 +10,7 @@ class MyHomePage extends StatelessWidget {
 		ProductButton("All Products"),
 		ProductButton("My Products"),
 		ProductButton("Create Product"),
+		ProductButton("Logout"),
 	];
 	
 	@override

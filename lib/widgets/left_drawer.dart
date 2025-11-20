@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_shop_mobile/screens/menu.dart';
 import 'package:football_shop_mobile/screens/product_form.dart';
+import 'package:football_shop_mobile/screens/product_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
 	const LeftDrawer({super.key});
@@ -52,12 +53,23 @@ class LeftDrawer extends StatelessWidget {
 					ListTile(
 						leading: const Icon(Icons.post_add),
 						title: const Text('Tambah Produk'),
-						// Bagian redirection ke NewsFormPage
+						// Bagian redirection ke ProductFormPage
 						onTap: () {
 							Navigator.push(
 								context,
 								MaterialPageRoute(
 									builder: (context) => ProductFormPage(),
+								)
+							);
+						},
+					),
+					ListTile(
+						leading: const Icon(Icons.format_list_bulleted),
+						title: const Text("Product List"),
+						onTap: () {
+							Navigator.push(context, 
+								MaterialPageRoute(
+									builder: (context) => const ProductEntryListPage()
 								)
 							);
 						},
